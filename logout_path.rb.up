@@ -1,0 +1,4 @@
+Deface::Override.new(virtual_path: "spree/layouts/admin/_login_nav",
+                     name: 'logout_path',
+                     replace_contents: "[data-hook='user-logout-link']",
+                     text: "<%= link_to Spree.t(:logout), spree.logout_path %>")
