@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429095018) do
+ActiveRecord::Schema.define(version: 20140503073219) do
 
   create_table "spree_addresses", force: true do |t|
     t.string   "firstname"
@@ -543,7 +543,7 @@ ActiveRecord::Schema.define(version: 20140429095018) do
 
   create_table "spree_roles", force: true do |t|
     t.string  "name"
-    t.integer "tenant_id", default: 1
+    t.integer "tenant_id"
   end
 
   create_table "spree_roles_users", id: false, force: true do |t|
