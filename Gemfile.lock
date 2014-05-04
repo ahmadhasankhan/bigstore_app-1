@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/200Creative/spree_bootstrap_frontend.git
+  revision: 60c7067b294f3b77ff41b30699c92b352c8afeb5
+  branch: master
+  specs:
+    spree_bootstrap_frontend (2.2.0)
+      bootstrap-kaminari-views (~> 0.0.3)
+      bootstrap-sass (~> 3.1.0)
+      spree_core (~> 2.3.0.beta)
+
+GIT
   remote: git://github.com/spree/spree.git
   revision: dd18aa3ca7f76b6c9e49dc660902de745fc387b0
   branch: master
@@ -51,16 +61,6 @@ GIT
       stringex (~> 1.5.1)
     spree_sample (2.3.0.beta)
       spree_core (= 2.3.0.beta)
-
-GIT
-  remote: git://github.com/venkatesh3007/spree_bootstrap_frontend.git
-  revision: c8d5c791a9f53a10e04cde7b44aae30521616c1e
-  branch: master
-  specs:
-    spree_bootstrap_frontend (2.2.0)
-      bootstrap-kaminari-views (~> 0.0.3)
-      bootstrap-sass (~> 3.1.0)
-      spree_core (~> 2.3.0.beta)
 
 GIT
   remote: https://github.com/spree/spree_gateway.git
