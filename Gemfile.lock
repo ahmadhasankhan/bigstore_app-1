@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/spree/spree.git
-  revision: 1cc129179198d7e8cfbc33f78e94f1d5ef414ea6
+  revision: dd18aa3ca7f76b6c9e49dc660902de745fc387b0
   branch: master
   specs:
     spree (2.3.0.beta)
@@ -54,8 +54,8 @@ GIT
 
 GIT
   remote: git://github.com/venkatesh3007/spree_bootstrap_frontend.git
-  revision: 35c53c71a497cd330a97e7b35231a700d131a6f3
-  branch: iss65
+  revision: c8d5c791a9f53a10e04cde7b44aae30521616c1e
+  branch: master
   specs:
     spree_bootstrap_frontend (2.2.0)
       bootstrap-kaminari-views (~> 0.0.3)
