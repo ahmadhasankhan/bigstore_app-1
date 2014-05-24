@@ -48,7 +48,7 @@ gem 'puma'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'spree', github: 'spree/spree', branch: 'master'
-gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => 'master'
+gem 'spree', github: 'venkatesh3007/spree', branch: 'master'
+gem 'spree_gateway', :git => 'https://github.com/venkatesh3007/spree_gateway.git', :branch => 'master'
 gem 'spree_auth_devise', :git => 'https://github.com/venkatesh3007/spree_auth_devise.git', :branch => 'fix-logout-link'
-gem 'spree_bootstrap_frontend', github: '200Creative/spree_bootstrap_frontend', branch: 'master'
+gem 'spree_bootstrap_frontend', github: 'venkatesh3007/spree_bootstrap_frontend', branch: 'master'
