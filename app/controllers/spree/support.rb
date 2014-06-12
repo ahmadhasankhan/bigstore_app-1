@@ -1,10 +1,11 @@
 module CurrentTenant
   
   def current_tenant
-    if request.subdomain.match("venky") || request.subdomain.match("dhoni")
+    if request.subdomain.eql?("venky") || request.subdomain.eql?("dhoni")
       Tenant.find_by_subdomain! request.subdomain
     else
       redirect_to 'http://venky.roroid.asia'
+      return
     end
   end
 
