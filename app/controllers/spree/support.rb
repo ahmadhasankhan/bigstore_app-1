@@ -4,7 +4,7 @@ module CurrentTenant
     zoho = "https://mail.zoho.com"
     if request.subdomain.eql?("venky") || request.subdomain.eql?("dhoni")
       Tenant.find_by_subdomain! request.subdomain
-    else if request.subdomain.eql?("mail")
+    elsif request.subdomain.eql?("mail")
       redirect_to zoho
     else
       redirect_to 'http://venky.roroid.asia'
