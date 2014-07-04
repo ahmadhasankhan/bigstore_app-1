@@ -6,6 +6,7 @@ module CurrentTenant
       Tenant.find_by_subdomain! request.subdomain
     elsif request.subdomain.eql?("mail")
       redirect_to zoho
+      return
     else
       redirect_to 'http://venky.roroid.asia'
       return
