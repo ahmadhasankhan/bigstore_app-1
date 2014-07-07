@@ -1,7 +1,7 @@
 module CurrentTenant
   
   def current_tenant
-    zoho = "https://mail.zoho.com"
+    zoho = "https://www.zoho.com/mail/login.html"
     if request.subdomain.eql?("venky") || request.subdomain.eql?("dhoni")
       Tenant.find_by_subdomain! request.subdomain
     elsif request.subdomain.eql?("mail")
