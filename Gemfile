@@ -52,3 +52,5 @@ gem 'spree', github: 'venkatesh3007/spree', branch: 'master'
 gem 'spree_gateway', :git => 'https://github.com/venkatesh3007/spree_gateway.git', :branch => 'master'
 gem 'spree_auth_devise', :git => 'https://github.com/venkatesh3007/spree_auth_devise.git', :branch => 'fix-logout-link'
 gem 'spree_bootstrap_frontend', github: 'venkatesh3007/spree_bootstrap_frontend', branch: 'master'
+
+gem 'rack-cors', :require => 'rack/cors'

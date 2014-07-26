@@ -22,6 +22,13 @@ module Store1
     end
     
 
+
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: [:get, :post, :options]
+      end
+    end
     I18n.config.enforce_available_locales = false
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
