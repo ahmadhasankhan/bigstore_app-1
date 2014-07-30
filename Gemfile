@@ -54,3 +54,5 @@ gem 'spree_auth_devise', :git => 'https://github.com/venkatesh3007/spree_auth_de
 gem 'spree_bootstrap_frontend', github: 'venkatesh3007/spree_bootstrap_frontend', branch: 'master'
 
 gem 'rack-cors', :require => 'rack/cors'
+
+gem 'ruby-units'
