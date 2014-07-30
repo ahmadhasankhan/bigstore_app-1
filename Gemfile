@@ -37,9 +37,7 @@ group :production do
   gem 'pg'
 end
 
-group :development do
-  gem 'sqlite3'
-end
+gem 'sqlite3'
 
 gem 'therubyracer'
 # Use ActiveModel has_secure_password
