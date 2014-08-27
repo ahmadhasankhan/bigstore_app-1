@@ -13,7 +13,8 @@ module Spree
       def create
         @tenant = Tenant.new(tenant_params)
         if @tenant.save
-          render :show, :status => 201
+          @tenant = Tenant.create_store_tenant(@tenant.id, params[:user][:email], params[:user][:password])
+          redirect_to admin_path, :status => 201
           # respond_with(@tenant, :status => 201, :default_template => 'spree/api/tenants/show')
         else
           @resource = @tenant
@@ -29,7 +30,7 @@ module Spree
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def tenant_params
-        params.require(:tenant).permit(:name, :subdomain)
+        params.require(:tenant).permit(:name, :subdomain, :domain, users: [:id , :email, :password])
       end
     end
   end
