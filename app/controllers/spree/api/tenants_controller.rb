@@ -8,22 +8,27 @@ module Spree
         @tenant = Tenant.new
       end
 
-      # POST /tenants
-      # POST /tenants.json
+      # First check if the user is present using find_by_email
       def create
         @tenant = Tenant.new(tenant_params)
-        if @tenant.save
-          @tenant = Tenant.create_store_tenant(@tenant.id, params[:user][:email], params[:user][:password])
-          redirect_to admin_path, :status => 201
-          # respond_with(@tenant, :status => 201, :default_template => 'spree/api/tenants/show')
-        else
+        user = Spree::User.find_by_email(params[:user][:email])
+        if !user.present?  # If user not exist in database create the user
+          if @tenant.save
+            @tenant = Tenant.create_store_tenant(@tenant.id, params[:user][:email], params[:user][:password])
+            redirect_to admin_path, :status => 201
+          else 
+            @resource = @tenant
+            render "spree/api/errors/invalid_resource", :status => 422
+          end
+        else # If user with email already exist in database
           @resource = @tenant
           render "spree/api/errors/invalid_resource", :status => 422
         end
       end
 
       private
-      # Use callbacks to share common setup or constraints between actions.
+      ########
+
       def set_tenant
         @tenant = Tenant.find(params[:id])
       end
