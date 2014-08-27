@@ -1,5 +1,8 @@
 class Tenant < ActiveRecord::Base
   
+  # validates_uniqueness_of :subdomain
+
+
   def self.current_id=(id)
     Thread.current[:tenant_id] = id
   end

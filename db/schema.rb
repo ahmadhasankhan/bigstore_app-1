@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140503073219) do
+ActiveRecord::Schema.define(version: 20140823110510) do
 
   create_table "spree_addresses", force: true do |t|
     t.string   "firstname"
@@ -873,13 +873,11 @@ ActiveRecord::Schema.define(version: 20140503073219) do
     t.datetime "reset_password_sent_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "spree_api_key",          limit: 48
     t.datetime "remember_created_at"
     t.integer  "tenant_id",                          default: 1
   end
 
   add_index "spree_users", ["email"], name: "email_idx_unique", unique: true
-  add_index "spree_users", ["spree_api_key"], name: "index_spree_users_on_spree_api_key"
 
   create_table "spree_variants", force: true do |t|
     t.string   "sku",                                     default: "",    null: false
@@ -941,8 +939,31 @@ ActiveRecord::Schema.define(version: 20140503073219) do
   create_table "tenants", force: true do |t|
     t.string   "name"
     t.string   "subdomain"
+    t.string   "domain"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "users", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.integer  "failed_attempts",        default: 0,  null: false
+    t.string   "unlock_token"
+    t.datetime "locked_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true
 
 end

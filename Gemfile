@@ -6,7 +6,7 @@ gem 'rails', '4.1.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
-gem 'debugger'
+# gem 'debugger'
 gem 'ruby-debug-passenger'
 # Spree
 
@@ -46,6 +46,7 @@ gem 'therubyracer'
 # Use unicorn as the app server
 # gem 'unicorn'
 gem 'puma'
+gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
@@ -56,7 +57,14 @@ gem 'spree', github: 'venkatesh3007/spree', branch: 'master'
 gem 'spree_gateway', :git => 'https://github.com/venkatesh3007/spree_gateway.git', :branch => 'master'
 gem 'spree_auth_devise', :git => 'https://github.com/venkatesh3007/spree_auth_devise.git', :branch => 'fix-logout-link'
 gem 'spree_bootstrap_frontend', github: 'venkatesh3007/spree_bootstrap_frontend', branch: 'master'
-
+gem 'rabl'
 gem 'rack-cors', :require => 'rack/cors'
 
 gem 'ruby-units'
+
+# For Debugging
+gem 'debugger', group: [:development, :test]
+# gem 'spring' , group: [:development, :test]
+gem 'awesome_print', group: [:development, :test]
+gem "binding_of_caller", group: [:development, :test]
+gem 'better_errors', group: [:development, :test]

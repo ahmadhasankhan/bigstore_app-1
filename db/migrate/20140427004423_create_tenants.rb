@@ -3,7 +3,7 @@ class CreateTenants < ActiveRecord::Migration
     create_table :tenants do |t|
       t.string :name
       t.string :subdomain
-
+      t.string :domain
       t.timestamps
     end
   end
