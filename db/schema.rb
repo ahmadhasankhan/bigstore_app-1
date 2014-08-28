@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823110510) do
+ActiveRecord::Schema.define(version: 20140828110755) do
 
   create_table "spree_addresses", force: true do |t|
     t.string   "firstname"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.integer  "country_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",         default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_addresses", ["country_id"], name: "index_spree_addresses_on_country_id"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "state"
     t.integer  "order_id"
     t.boolean  "included",                                 default: false
-    t.integer  "tenant_id",                                default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_adjustments", ["adjustable_id", "adjustable_type"], name: "index_spree_adjustments_on_adjustable_id_and_adjustable_type"
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.text     "alt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",                          default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_assets", ["viewable_id"], name: "index_assets_on_viewable_id"
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "preferences"
-    t.integer  "tenant_id",       default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_calculators", ["calculable_id", "calculable_type"], name: "index_spree_calculators_on_calculable_id_and_calculable_type"
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "type",       limit: 50
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",             default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_configurations", ["name", "type"], name: "index_spree_configurations_on_name_and_type"
@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.integer  "numcode"
     t.boolean  "states_required", default: false
     t.datetime "updated_at"
-    t.integer  "tenant_id",       default: 1
+    t.integer  "tenant_id"
   end
 
   create_table "spree_credit_cards", force: true do |t|
@@ -118,8 +118,6 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "year"
     t.string   "cc_type"
     t.string   "last_digits"
-    t.string   "first_name"
-    t.string   "last_name"
     t.integer  "address_id"
     t.string   "gateway_customer_profile_id"
     t.string   "gateway_payment_profile_id"
@@ -128,7 +126,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "name"
     t.integer  "user_id"
     t.integer  "payment_method_id"
-    t.integer  "tenant_id",                   default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_credit_cards", ["address_id"], name: "index_spree_credit_cards_on_address_id"
@@ -146,7 +144,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "preferences"
-    t.integer  "tenant_id",   default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_gateways", ["active"], name: "index_spree_gateways_on_active"
@@ -162,7 +160,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.datetime "updated_at"
     t.boolean  "pending",                 default: true
     t.integer  "line_item_id"
-    t.integer  "tenant_id",               default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_inventory_units", ["line_item_id"], name: "index_spree_inventory_units_on_line_item_id"
@@ -175,18 +173,18 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.integer  "variant_id"
     t.integer  "order_id"
     t.integer  "quantity",                                                    null: false
-    t.decimal  "price",                precision: 8,  scale: 2,               null: false
+    t.decimal  "price",                precision: 10, scale: 2,               null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "currency"
-    t.decimal  "cost_price",           precision: 8,  scale: 2
+    t.decimal  "cost_price",           precision: 10, scale: 2
     t.integer  "tax_category_id"
     t.decimal  "adjustment_total",     precision: 10, scale: 2, default: 0.0
     t.decimal  "additional_tax_total", precision: 10, scale: 2, default: 0.0
     t.decimal  "promo_total",          precision: 10, scale: 2, default: 0.0
     t.decimal  "included_tax_total",   precision: 10, scale: 2, default: 0.0, null: false
     t.decimal  "pre_tax_amount",       precision: 8,  scale: 2
-    t.integer  "tenant_id",                                     default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_line_items", ["order_id"], name: "index_spree_line_items_on_order_id"
@@ -199,7 +197,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.text     "details"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",   default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_log_entries", ["source_id", "source_type"], name: "index_spree_log_entries_on_source_id_and_source_type"
@@ -210,7 +208,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.integer  "position",                 default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",                default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_option_types", ["position"], name: "index_spree_option_types_on_position"
@@ -218,7 +216,6 @@ ActiveRecord::Schema.define(version: 20140823110510) do
   create_table "spree_option_types_prototypes", id: false, force: true do |t|
     t.integer "prototype_id"
     t.integer "option_type_id"
-    t.integer "tenant_id",      default: 1
   end
 
   create_table "spree_option_values", force: true do |t|
@@ -228,7 +225,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.integer  "option_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",      default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_option_values", ["option_type_id"], name: "index_spree_option_values_on_option_type_id"
@@ -237,7 +234,6 @@ ActiveRecord::Schema.define(version: 20140823110510) do
   create_table "spree_option_values_variants", id: false, force: true do |t|
     t.integer "variant_id"
     t.integer "option_value_id"
-    t.integer "tenant_id",       default: 1
   end
 
   add_index "spree_option_values_variants", ["variant_id", "option_value_id"], name: "index_option_values_variants_on_variant_id_and_option_value_id"
@@ -274,7 +270,8 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.datetime "approved_at"
     t.boolean  "confirmation_delivered",                                     default: false
     t.boolean  "considered_risky",                                           default: false
-    t.integer  "tenant_id",                                                  default: 1
+    t.integer  "tenant_id"
+    t.string   "guest_token"
   end
 
   add_index "spree_orders", ["approver_id"], name: "index_spree_orders_on_approver_id"
@@ -292,7 +289,6 @@ ActiveRecord::Schema.define(version: 20140823110510) do
   create_table "spree_orders_promotions", id: false, force: true do |t|
     t.integer "order_id"
     t.integer "promotion_id"
-    t.integer "tenant_id",    default: 1
   end
 
   add_index "spree_orders_promotions", ["order_id", "promotion_id"], name: "index_spree_orders_promotions_on_order_id_and_promotion_id"
@@ -302,7 +298,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.integer  "payment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",                           default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_payment_capture_events", ["payment_id"], name: "index_spree_payment_capture_events_on_payment_id"
@@ -319,7 +315,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "display_on"
     t.boolean  "auto_capture"
     t.text     "preferences"
-    t.integer  "tenant_id",    default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_payment_methods", ["id", "type"], name: "index_spree_payment_methods_on_id_and_type"
@@ -338,8 +334,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "identifier"
     t.string   "cvv_response_code"
     t.string   "cvv_response_message"
-    t.decimal  "uncaptured_amount",    precision: 10, scale: 2, default: 0.0
-    t.integer  "tenant_id",                                     default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_payments", ["order_id"], name: "index_spree_payments_on_order_id"
@@ -351,17 +346,17 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "key"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",  default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_preferences", ["key"], name: "index_spree_preferences_on_key", unique: true
 
   create_table "spree_prices", force: true do |t|
-    t.integer  "variant_id",                                     null: false
-    t.decimal  "amount",     precision: 8, scale: 2
+    t.integer  "variant_id",                          null: false
+    t.decimal  "amount",     precision: 10, scale: 2
     t.string   "currency"
     t.datetime "deleted_at"
-    t.integer  "tenant_id",                          default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_prices", ["deleted_at"], name: "index_spree_prices_on_deleted_at"
@@ -373,7 +368,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.integer  "option_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",      default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_product_option_types", ["option_type_id"], name: "index_spree_product_option_types_on_option_type_id"
@@ -387,7 +382,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position",    default: 0
-    t.integer  "tenant_id",   default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_product_properties", ["position"], name: "index_spree_product_properties_on_position"
@@ -406,7 +401,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.integer  "shipping_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",            default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"
@@ -420,7 +415,6 @@ ActiveRecord::Schema.define(version: 20140823110510) do
   create_table "spree_products_promotion_rules", id: false, force: true do |t|
     t.integer "product_id"
     t.integer "promotion_rule_id"
-    t.integer "tenant_id",         default: 1
   end
 
   add_index "spree_products_promotion_rules", ["product_id"], name: "index_products_promotion_rules_on_product_id"
@@ -430,7 +424,6 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.integer "product_id"
     t.integer "taxon_id"
     t.integer "position"
-    t.integer "tenant_id",  default: 1
   end
 
   add_index "spree_products_taxons", ["position"], name: "index_spree_products_taxons_on_position"
@@ -441,19 +434,21 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.integer "promotion_action_id"
     t.integer "variant_id"
     t.integer "quantity",            default: 1
-    t.integer "tenant_id",           default: 1
+    t.integer "tenant_id"
   end
 
   add_index "spree_promotion_action_line_items", ["promotion_action_id"], name: "index_spree_promotion_action_line_items_on_promotion_action_id"
   add_index "spree_promotion_action_line_items", ["variant_id"], name: "index_spree_promotion_action_line_items_on_variant_id"
 
   create_table "spree_promotion_actions", force: true do |t|
-    t.integer "promotion_id"
-    t.integer "position"
-    t.string  "type"
-    t.integer "tenant_id",    default: 1
+    t.integer  "promotion_id"
+    t.integer  "position"
+    t.string   "type"
+    t.integer  "tenant_id"
+    t.datetime "deleted_at"
   end
 
+  add_index "spree_promotion_actions", ["deleted_at"], name: "index_spree_promotion_actions_on_deleted_at"
   add_index "spree_promotion_actions", ["id", "type"], name: "index_spree_promotion_actions_on_id_and_type"
   add_index "spree_promotion_actions", ["promotion_id"], name: "index_spree_promotion_actions_on_promotion_id"
 
@@ -466,7 +461,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.datetime "updated_at"
     t.string   "code"
     t.text     "preferences"
-    t.integer  "tenant_id",        default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_promotion_rules", ["product_group_id"], name: "index_promotion_rules_on_product_group_id"
@@ -476,7 +471,6 @@ ActiveRecord::Schema.define(version: 20140823110510) do
   create_table "spree_promotion_rules_users", id: false, force: true do |t|
     t.integer "user_id"
     t.integer "promotion_rule_id"
-    t.integer "tenant_id",         default: 1
   end
 
   add_index "spree_promotion_rules_users", ["promotion_rule_id"], name: "index_promotion_rules_users_on_promotion_rule_id"
@@ -495,7 +489,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "path"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",    default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_promotions", ["advertise"], name: "index_spree_promotions_on_advertise"
@@ -506,23 +500,22 @@ ActiveRecord::Schema.define(version: 20140823110510) do
 
   create_table "spree_properties", force: true do |t|
     t.string   "name"
-    t.string   "presentation",             null: false
+    t.string   "presentation", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",    default: 1
+    t.integer  "tenant_id"
   end
 
   create_table "spree_properties_prototypes", id: false, force: true do |t|
     t.integer "prototype_id"
     t.integer "property_id"
-    t.integer "tenant_id",    default: 1
   end
 
   create_table "spree_prototypes", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",  default: 1
+    t.integer  "tenant_id"
   end
 
   create_table "spree_return_authorizations", force: true do |t|
@@ -534,7 +527,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "stock_location_id"
-    t.integer  "tenant_id",                                  default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_return_authorizations", ["number"], name: "index_spree_return_authorizations_on_number"
@@ -549,7 +542,6 @@ ActiveRecord::Schema.define(version: 20140823110510) do
   create_table "spree_roles_users", id: false, force: true do |t|
     t.integer "role_id"
     t.integer "user_id"
-    t.integer "tenant_id", default: 1
   end
 
   add_index "spree_roles_users", ["role_id"], name: "index_spree_roles_users_on_role_id"
@@ -558,7 +550,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
   create_table "spree_shipments", force: true do |t|
     t.string   "tracking"
     t.string   "number"
-    t.decimal  "cost",                 precision: 8,  scale: 2
+    t.decimal  "cost",                 precision: 10, scale: 2, default: 0.0
     t.datetime "shipped_at"
     t.integer  "order_id"
     t.integer  "address_id"
@@ -571,7 +563,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.decimal  "promo_total",          precision: 10, scale: 2, default: 0.0
     t.decimal  "included_tax_total",   precision: 10, scale: 2, default: 0.0, null: false
     t.decimal  "pre_tax_amount",       precision: 8,  scale: 2
-    t.integer  "tenant_id",                                     default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_shipments", ["address_id"], name: "index_spree_shipments_on_address_id"
@@ -583,15 +575,15 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",  default: 1
+    t.integer  "tenant_id"
   end
 
   create_table "spree_shipping_method_categories", force: true do |t|
-    t.integer  "shipping_method_id",               null: false
-    t.integer  "shipping_category_id",             null: false
+    t.integer  "shipping_method_id",   null: false
+    t.integer  "shipping_category_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",            default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_shipping_method_categories", ["shipping_category_id", "shipping_method_id"], name: "unique_spree_shipping_method_categories", unique: true
@@ -606,7 +598,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "tracking_url"
     t.string   "admin_name"
     t.integer  "tax_category_id"
-    t.integer  "tenant_id",       default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_shipping_methods", ["deleted_at"], name: "index_spree_shipping_methods_on_deleted_at"
@@ -615,7 +607,6 @@ ActiveRecord::Schema.define(version: 20140823110510) do
   create_table "spree_shipping_methods_zones", id: false, force: true do |t|
     t.integer "shipping_method_id"
     t.integer "zone_id"
-    t.integer "tenant_id",          default: 1
   end
 
   create_table "spree_shipping_rates", force: true do |t|
@@ -626,7 +617,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tax_rate_id"
-    t.integer  "tenant_id",                                  default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_shipping_rates", ["selected"], name: "index_spree_shipping_rates_on_selected"
@@ -642,7 +633,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "payment_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",      default: 1
+    t.integer  "tenant_id"
   end
 
   create_table "spree_state_changes", force: true do |t|
@@ -654,7 +645,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "next_state"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",      default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_state_changes", ["stateful_id", "stateful_type"], name: "index_spree_state_changes_on_stateful_id_and_stateful_type"
@@ -665,7 +656,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "abbr"
     t.integer  "country_id"
     t.datetime "updated_at"
-    t.integer  "tenant_id",  default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_states", ["country_id"], name: "index_spree_states_on_country_id"
@@ -678,7 +669,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.datetime "updated_at"
     t.boolean  "backorderable",     default: false
     t.datetime "deleted_at"
-    t.integer  "tenant_id",         default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_stock_items", ["backorderable"], name: "index_spree_stock_items_on_backorderable"
@@ -702,7 +693,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.boolean  "backorderable_default",  default: false
     t.boolean  "propagate_all_variants", default: true
     t.string   "admin_name"
-    t.integer  "tenant_id",              default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_stock_locations", ["active"], name: "index_spree_stock_locations_on_active"
@@ -719,7 +710,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.datetime "updated_at"
     t.integer  "originator_id"
     t.string   "originator_type"
-    t.integer  "tenant_id",       default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_stock_movements", ["stock_item_id"], name: "index_spree_stock_movements_on_stock_item_id"
@@ -732,7 +723,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "number"
-    t.integer  "tenant_id",               default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_stock_transfers", ["destination_location_id"], name: "index_spree_stock_transfers_on_destination_location_id"
@@ -751,7 +742,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.boolean  "default",           default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",         default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_stores", ["code"], name: "index_spree_stores_on_code"
@@ -765,7 +756,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",   default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_tax_categories", ["deleted_at"], name: "index_spree_tax_categories_on_deleted_at"
@@ -781,7 +772,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "name"
     t.boolean  "show_rate_in_label",                         default: true
     t.datetime "deleted_at"
-    t.integer  "tenant_id",                                  default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_tax_rates", ["deleted_at"], name: "index_spree_tax_rates_on_deleted_at"
@@ -795,7 +786,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position",   default: 0
-    t.integer  "tenant_id",  default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_taxonomies", ["position"], name: "index_spree_taxonomies_on_position"
@@ -819,7 +810,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "meta_description"
     t.string   "meta_keywords"
     t.integer  "depth"
-    t.integer  "tenant_id",         default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_taxons", ["parent_id"], name: "index_taxons_on_parent_id"
@@ -833,7 +824,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",        default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_tokenized_permissions", ["permissable_id", "permissable_type"], name: "index_tokenized_name_and_type"
@@ -844,7 +835,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.boolean  "active",       default: true
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",    default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_trackers", ["active"], name: "index_spree_trackers_on_active"
@@ -875,28 +866,27 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.datetime "updated_at"
     t.string   "spree_api_key",          limit: 48
     t.datetime "remember_created_at"
-    t.integer  "tenant_id",                          default: 1
+    t.integer  "tenant_id"
   end
 
-  add_index "spree_users", ["email"], name: "email_idx_unique", unique: true
   add_index "spree_users", ["spree_api_key"], name: "index_spree_users_on_spree_api_key"
 
   create_table "spree_variants", force: true do |t|
-    t.string   "sku",                                     default: "",    null: false
-    t.decimal  "weight",          precision: 8, scale: 2, default: 0.0
-    t.decimal  "height",          precision: 8, scale: 2
-    t.decimal  "width",           precision: 8, scale: 2
-    t.decimal  "depth",           precision: 8, scale: 2
+    t.string   "sku",                                      default: "",    null: false
+    t.decimal  "weight",          precision: 8,  scale: 2, default: 0.0
+    t.decimal  "height",          precision: 8,  scale: 2
+    t.decimal  "width",           precision: 8,  scale: 2
+    t.decimal  "depth",           precision: 8,  scale: 2
     t.datetime "deleted_at"
-    t.boolean  "is_master",                               default: false
+    t.boolean  "is_master",                                default: false
     t.integer  "product_id"
-    t.decimal  "cost_price",      precision: 8, scale: 2
+    t.decimal  "cost_price",      precision: 10, scale: 2
     t.integer  "position"
     t.string   "cost_currency"
-    t.boolean  "track_inventory",                         default: true
+    t.boolean  "track_inventory",                          default: true
     t.integer  "tax_category_id"
     t.datetime "updated_at"
-    t.integer  "tenant_id",                               default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_variants", ["deleted_at"], name: "index_spree_variants_on_deleted_at"
@@ -913,7 +903,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.integer  "zone_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",     default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_zone_members", ["zone_id"], name: "index_spree_zone_members_on_zone_id"
@@ -926,7 +916,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.integer  "zone_members_count", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",          default: 1
+    t.integer  "tenant_id"
   end
 
   add_index "spree_zones", ["default_tax"], name: "index_spree_zones_on_default_tax"
@@ -935,7 +925,7 @@ ActiveRecord::Schema.define(version: 20140823110510) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tenant_id",  default: 1
+    t.integer  "tenant_id"
   end
 
   create_table "tenants", force: true do |t|

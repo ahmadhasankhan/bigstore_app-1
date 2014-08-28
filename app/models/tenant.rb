@@ -31,12 +31,12 @@ class Tenant < ActiveRecord::Base
 
   # Set admin role to tenant
   def set_admin_role_to_tenant
-    role = Spree::Role.create!(name: 'admin', tenant_id: Tenant.current_id)
+    role = Spree::Role.create!(name: 'admin')
   end
 
   # create a store admin
-  def self.create_store_tenant(tenant_id, t_email, password)
-    role = Spree::Role.where(tenant_id: tenant_id).first
+  def self.create_store_tenant(t_email, password)
+    role = Spree::Role.first
     role.users.create!(email: t_email, password: password) 
   end
 

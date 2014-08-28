@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.4'
 
 
 # Use SCSS for stylesheets
@@ -53,9 +53,9 @@ gem 'devise'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'spree', github: 'venkatesh3007/spree', branch: 'master'
+gem 'spree', git: 'https://github.com/roid-softwares/spree.git', branch: '2-3-stable'
 gem 'spree_gateway', :git => 'https://github.com/venkatesh3007/spree_gateway.git', :branch => 'master'
-gem 'spree_auth_devise', :git => 'https://github.com/venkatesh3007/spree_auth_devise.git', :branch => 'fix-logout-link'
+gem 'spree_auth_devise', :git => 'https://github.com/roid-softwares/spree_auth_devise.git', :branch => 'master'
 gem 'spree_bootstrap_frontend', github: 'venkatesh3007/spree_bootstrap_frontend', branch: 'master'
 gem 'rabl'
 gem 'rack-cors', :require => 'rack/cors'

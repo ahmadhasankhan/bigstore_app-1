@@ -8,19 +8,12 @@ module Spree
         @tenant = Tenant.new
       end
 
-      # First check if the user is present using find_by_email
       def create
         @tenant = Tenant.new(tenant_params)
-        user = Spree::User.find_by_email(params[:user][:email])
-        if !user.present?  # If user not exist in database create the user
-          if @tenant.save
-            @tenant = Tenant.create_store_tenant(@tenant.id, params[:user][:email], params[:user][:password])
-            redirect_to admin_path, :status => 201
-          else 
-            @resource = @tenant
-            render "spree/api/errors/invalid_resource", :status => 422
-          end
-        else # If user with email already exist in database
+        if @tenant.save
+          @tenant = Tenant.create_store_tenant(params[:user][:email], params[:user][:password])
+          redirect_to admin_path, :status => 201
+        else 
           @resource = @tenant
           render "spree/api/errors/invalid_resource", :status => 422
         end
