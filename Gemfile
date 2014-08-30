@@ -53,18 +53,11 @@ gem 'devise'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'spree', git: 'https://github.com/roid-softwares/spree.git', branch: '2-3-stable'
-gem 'spree_gateway', :git => 'https://github.com/venkatesh3007/spree_gateway.git', :branch => 'master'
-gem 'spree_auth_devise', :git => 'https://github.com/roid-softwares/spree_auth_devise.git', :branch => 'master'
-gem 'spree_bootstrap_frontend', github: 'venkatesh3007/spree_bootstrap_frontend', branch: 'master'
+gem 'spree', git: 'https://github.com/pulkit21/spree.git', branch: '2-3-stable'
+gem 'spree_gateway', :git => 'https://github.com/pulkit21/spree_gateway-master.git', :branch => 'master'
+gem 'spree_auth_devise', :git => 'https://github.com/pulkit21/spree_auth_devise.git', :branch => 'master'
+gem 'spree_bootstrap_frontend', :git=> 'https://github.com/pulkit21/spree_bootstrap_frontend-master.git', :branch => 'master'
 gem 'rabl'
 gem 'rack-cors', :require => 'rack/cors'
 
 gem 'ruby-units'
-
-# For Debugging
-gem 'debugger', group: [:development, :test]
-# gem 'spring' , group: [:development, :test]
-gem 'awesome_print', group: [:development, :test]
-gem "binding_of_caller", group: [:development, :test]
-gem 'better_errors', group: [:development, :test]

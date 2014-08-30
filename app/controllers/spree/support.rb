@@ -1,7 +1,11 @@
 module CurrentTenant
   
   def current_tenant
-    Tenant.find_by_subdomain(request.subdomain) || Tenant.find_by_domain(request.domain)
+    # if spree_current_user.present?
+
+    # end
+    # debugger
+    Tenant.find_by_subdomain(request.subdomain)
   end
 
   private
