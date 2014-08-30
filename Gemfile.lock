@@ -1,4 +1,22 @@
 GIT
+  remote: https://github.com/bigstores/spree_bootstrap_frontend-master.git
+  revision: f10d7b3eae50337e3ab055177488e15c9f1d488f
+  branch: master
+  specs:
+    spree_bootstrap_frontend (2.2.0)
+      bootstrap-kaminari-views (~> 0.0.3)
+      bootstrap-sass (~> 3.1.0)
+      spree_core (~> 2.3.0.beta)
+
+GIT
+  remote: https://github.com/bigstores/spree_gateway-master.git
+  revision: b35cb89f805031dc8c8a9aa61c15f8aeddbafb1d
+  branch: master
+  specs:
+    spree_gateway (2.3.0.beta)
+      spree_core (~> 2.3.0.beta)
+
+GIT
   remote: https://github.com/pulkit21/spree.git
   revision: 70ce300515555eae5ab89873143609e112ef1fc2
   branch: 2-3-stable
@@ -64,24 +82,6 @@ GIT
       devise-encryptable (= 0.1.2)
       json
       multi_json
-      spree_core (~> 2.3.0.beta)
-
-GIT
-  remote: https://github.com/pulkit21/spree_bootstrap_frontend-master.git
-  revision: 31c31b6a2b267e65d13f49781bbaba92ae6a498c
-  branch: master
-  specs:
-    spree_bootstrap_frontend (2.2.0)
-      bootstrap-kaminari-views (~> 0.0.3)
-      bootstrap-sass (~> 3.1.0)
-      spree_core (~> 2.3.0.beta)
-
-GIT
-  remote: https://github.com/pulkit21/spree_gateway-master.git
-  revision: b35cb89f805031dc8c8a9aa61c15f8aeddbafb1d
-  branch: master
-  specs:
-    spree_gateway (2.3.0.beta)
       spree_core (~> 2.3.0.beta)
 
 GEM
