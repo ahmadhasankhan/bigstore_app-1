@@ -1,46 +1,28 @@
 GIT
-  remote: https://github.com/bigstores/spree_bootstrap_frontend-master.git
-  revision: f10d7b3eae50337e3ab055177488e15c9f1d488f
-  branch: master
-  specs:
-    spree_bootstrap_frontend (2.2.0)
-      bootstrap-kaminari-views (~> 0.0.3)
-      bootstrap-sass (~> 3.1.0)
-      spree_core (~> 2.3.0.beta)
-
-GIT
-  remote: https://github.com/bigstores/spree_gateway-master.git
-  revision: b35cb89f805031dc8c8a9aa61c15f8aeddbafb1d
-  branch: master
-  specs:
-    spree_gateway (2.3.0.beta)
-      spree_core (~> 2.3.0.beta)
-
-GIT
-  remote: https://github.com/pulkit21/spree.git
-  revision: 70ce300515555eae5ab89873143609e112ef1fc2
+  remote: https://github.com/bigstores/spree.git
+  revision: 4d3c33d77cc9d5b76c2832018f162525a0339183
   branch: 2-3-stable
   specs:
-    spree (2.3.2.beta)
-      spree_api (= 2.3.2.beta)
-      spree_backend (= 2.3.2.beta)
-      spree_cmd (= 2.3.2.beta)
-      spree_core (= 2.3.2.beta)
-      spree_frontend (= 2.3.2.beta)
-      spree_sample (= 2.3.2.beta)
-    spree_api (2.3.2.beta)
+    spree (2.3.3.beta)
+      spree_api (= 2.3.3.beta)
+      spree_backend (= 2.3.3.beta)
+      spree_cmd (= 2.3.3.beta)
+      spree_core (= 2.3.3.beta)
+      spree_frontend (= 2.3.3.beta)
+      spree_sample (= 2.3.3.beta)
+    spree_api (2.3.3.beta)
       rabl (~> 0.9.4.pre1)
-      spree_core (= 2.3.2.beta)
+      spree_core (= 2.3.3.beta)
       versioncake (~> 2.3.1)
-    spree_backend (2.3.2.beta)
+    spree_backend (2.3.3.beta)
       jquery-rails (= 3.1.0)
       jquery-ui-rails (~> 4.1.0)
       select2-rails (~> 3.5.0)
-      spree_api (= 2.3.2.beta)
-      spree_core (= 2.3.2.beta)
-    spree_cmd (2.3.2.beta)
+      spree_api (= 2.3.3.beta)
+      spree_core (= 2.3.3.beta)
+    spree_cmd (2.3.3.beta)
       thor (~> 0.14)
-    spree_core (2.3.2.beta)
+    spree_core (2.3.3.beta)
       activemerchant (~> 1.43.1)
       acts_as_list (= 0.3.0)
       awesome_nested_set (~> 3.0.0.rc.3)
@@ -62,18 +44,28 @@ GIT
       state_machine (= 1.2.0)
       stringex (~> 1.5.1)
       truncate_html (= 0.9.2)
-    spree_frontend (2.3.2.beta)
+    spree_frontend (2.3.3.beta)
       canonical-rails (~> 0.0.4)
       jquery-rails (= 3.1.0)
-      spree_api (= 2.3.2.beta)
-      spree_core (= 2.3.2.beta)
+      spree_api (= 2.3.3.beta)
+      spree_core (= 2.3.3.beta)
       stringex (~> 1.5.1)
-    spree_sample (2.3.2.beta)
-      spree_core (= 2.3.2.beta)
+    spree_sample (2.3.3.beta)
+      spree_core (= 2.3.3.beta)
 
 GIT
-  remote: https://github.com/pulkit21/spree_auth_devise.git
-  revision: 1457557da1da51a458d6bbfd53c706536591e040
+  remote: https://github.com/bigstores/spree_bootstrap_frontend-master.git
+  revision: 118195419cd4690e9c664dbcc218c1dae4e1a0fd
+  branch: master
+  specs:
+    spree_bootstrap_frontend (2.2.0)
+      bootstrap-kaminari-views (~> 0.0.3)
+      bootstrap-sass (~> 3.1.0)
+      spree_core (~> 2.3.0.beta)
+
+GIT
+  remote: https://github.com/roid-softwares/spree_auth_devise.git
+  revision: 9b750fbb2f87d1d5116f33bcd16593772f2e0016
   branch: master
   specs:
     spree_auth_devise (2.2.0)
@@ -82,6 +74,14 @@ GIT
       devise-encryptable (= 0.1.2)
       json
       multi_json
+      spree_core (~> 2.3.0.beta)
+
+GIT
+  remote: https://github.com/roid-softwares/spree_gateway.git
+  revision: a432be6166f79ac1617ed07a7d27fc56bf7c8785
+  branch: master
+  specs:
+    spree_gateway (2.3.0.beta)
       spree_core (~> 2.3.0.beta)
 
 GEM
@@ -129,11 +129,18 @@ GEM
     arel (5.0.1.20140414130214)
     awesome_nested_set (3.0.1)
       activerecord (>= 4.0.0, < 5)
+    awesome_print (1.2.0)
     aws-sdk (1.27.0)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt (3.1.7)
+    better_errors (2.0.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap-kaminari-views (0.0.3)
       kaminari (>= 0.13)
       rails (>= 3.1)
@@ -148,6 +155,7 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.4)
       climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -156,6 +164,14 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     colorize (0.7.3)
+    columnize (0.8.9)
+    debug_inspector (0.0.2)
+    debugger (1.6.8)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.3.5)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.3.5)
     deface (1.0.0)
       colorize (>= 0.5.8)
       nokogiri (~> 1.6.0)
@@ -308,7 +324,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
+  better_errors
+  binding_of_caller
   coffee-rails (~> 4.0.0)
+  debugger
   devise
   jbuilder (~> 1.2)
   jquery-rails
