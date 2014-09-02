@@ -10,6 +10,7 @@ Store1::Application.routes.draw do
   namespace :spree do
     namespace :api, defaults: { format: 'json' } do
       resources :tenants
+      resources :themes
     end
   end
           # The priority is based upon order of creation: first created -> highest priority.
