@@ -2,8 +2,13 @@ module Spree
   module Api
     class TenantsController < ActionController::Base
       before_filter :set_tenant, only: [:show]
-      respond_to :json
-     
+      #espond_to :json
+
+      def index
+        @tenant = Tenant.all
+      end
+
+
       def new
         @tenant = Tenant.new
       end
