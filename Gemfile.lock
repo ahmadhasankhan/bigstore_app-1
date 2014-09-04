@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/bigstores/spree.git
-  revision: 4d3c33d77cc9d5b76c2832018f162525a0339183
+  revision: ffbdf4556ed611689f8fe863d73c6c8fd7d08c5c
   branch: 2-3-stable
   specs:
     spree (2.3.3.beta)
@@ -129,18 +129,11 @@ GEM
     arel (5.0.1.20140414130214)
     awesome_nested_set (3.0.1)
       activerecord (>= 4.0.0, < 5)
-    awesome_print (1.2.0)
     aws-sdk (1.27.0)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt (3.1.7)
-    better_errors (2.0.0)
-      coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
-      rack (>= 0.9.0)
-    binding_of_caller (0.7.2)
-      debug_inspector (>= 0.0.1)
     bootstrap-kaminari-views (0.0.3)
       kaminari (>= 0.13)
       rails (>= 3.1)
@@ -155,7 +148,6 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.4)
       climate_control (>= 0.0.3, < 1.0)
-    coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -164,14 +156,6 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     colorize (0.7.3)
-    columnize (0.8.9)
-    debug_inspector (0.0.2)
-    debugger (1.6.8)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.3.5)
-    debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.3.5)
     deface (1.0.0)
       colorize (>= 0.5.8)
       nokogiri (~> 1.6.0)
@@ -287,7 +271,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.1.3)
+    sprockets-rails (2.1.4)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
@@ -324,11 +308,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  awesome_print
-  better_errors
-  binding_of_caller
   coffee-rails (~> 4.0.0)
-  debugger
   devise
   jbuilder (~> 1.2)
   jquery-rails

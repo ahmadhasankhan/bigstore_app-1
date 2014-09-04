@@ -12,7 +12,13 @@ module Spree
         @tenant = Tenant.new(tenant_params)
         if @tenant.save
           @tenant = Tenant.create_store_tenant(params[:user][:email], params[:user][:password])
-          redirect_to admin_path, :status => 201
+          if Tenant.store_domain.present?
+            @tenant_domain = Tenant.store_domain
+            redirect_to("http://#{@tenant_domain}/admin")
+          else
+            @tenant_subdomain = Tenant.store_subdomain
+            redirect_to "#{@tenant_subdomain}.#{request.host_with_port}/admin", :status => 201  
+          end
         else 
           @resource = @tenant
           render "spree/api/errors/invalid_resource", :status => 422
