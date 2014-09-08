@@ -44,9 +44,8 @@ class Tenant < ActiveRecord::Base
   # create a store admin
   def self.create_store_tenant(t_email, password)
     role = Spree::Role.first
-    user = role.users.new(email: t_email, password: password) 
-    user.generate_spree_api_key!
-    user.save!
+    role.users.create!(email: t_email, password: password)
+    role.users.first.generate_spree_api_key!
   end
 
   def self.store_subdomain
