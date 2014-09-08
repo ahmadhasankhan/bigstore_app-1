@@ -54,18 +54,8 @@ GIT
       spree_core (= 2.3.3.beta)
 
 GIT
-  remote: https://github.com/bigstores/spree_bootstrap_frontend-master.git
-  revision: 118195419cd4690e9c664dbcc218c1dae4e1a0fd
-  branch: master
-  specs:
-    spree_bootstrap_frontend (2.2.0)
-      bootstrap-kaminari-views (~> 0.0.3)
-      bootstrap-sass (~> 3.1.0)
-      spree_core (~> 2.3.0.beta)
-
-GIT
-  remote: https://github.com/roid-softwares/spree_auth_devise.git
-  revision: 9b750fbb2f87d1d5116f33bcd16593772f2e0016
+  remote: https://github.com/bigstores/spree_auth_devise.git
+  revision: cac5996ae986bf0d0e88c0aaee5b9eb2e8104546
   branch: master
   specs:
     spree_auth_devise (2.2.0)
@@ -77,8 +67,18 @@ GIT
       spree_core (~> 2.3.0.beta)
 
 GIT
-  remote: https://github.com/roid-softwares/spree_gateway.git
-  revision: a432be6166f79ac1617ed07a7d27fc56bf7c8785
+  remote: https://github.com/bigstores/spree_bootstrap_frontend-master.git
+  revision: 118195419cd4690e9c664dbcc218c1dae4e1a0fd
+  branch: master
+  specs:
+    spree_bootstrap_frontend (2.2.0)
+      bootstrap-kaminari-views (~> 0.0.3)
+      bootstrap-sass (~> 3.1.0)
+      spree_core (~> 2.3.0.beta)
+
+GIT
+  remote: https://github.com/bigstores/spree_gateway-master.git
+  revision: b35cb89f805031dc8c8a9aa61c15f8aeddbafb1d
   branch: master
   specs:
     spree_gateway (2.3.0.beta)
@@ -134,7 +134,7 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt (3.1.7)
-    bootstrap-kaminari-views (0.0.3)
+    bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
       rails (>= 3.1)
     bootstrap-sass (3.1.1.1)
@@ -220,7 +220,7 @@ GEM
     polyamorous (1.0.0)
       activerecord (>= 3.0)
     polyglot (0.3.5)
-    puma (2.9.0)
+    puma (2.9.1)
       rack (>= 1.1, < 2.0)
     rabl (0.9.4.pre1)
       activesupport (>= 2.3.14)
@@ -309,7 +309,6 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
-  devise
   jbuilder (~> 1.2)
   jquery-rails
   pg

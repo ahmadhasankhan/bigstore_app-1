@@ -46,7 +46,7 @@ gem 'therubyracer'
 # Use unicorn as the app server
 # gem 'unicorn'
 gem 'puma'
-gem 'devise'
+# gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
@@ -54,8 +54,8 @@ gem 'devise'
 # gem 'debugger', group: [:development, :test]
 
 gem 'spree', git: 'https://github.com/bigstores/spree.git', branch: '2-3-stable'
-gem 'spree_gateway', :git => 'https://github.com/roid-softwares/spree_gateway.git', :branch => 'master'
-gem 'spree_auth_devise', :git => 'https://github.com/roid-softwares/spree_auth_devise.git', :branch => 'master'
+gem 'spree_gateway', :git => 'https://github.com/bigstores/spree_gateway-master.git', :branch => 'master'
+gem 'spree_auth_devise', :git => 'https://github.com/bigstores/spree_auth_devise.git', :branch => 'master'
 gem 'spree_bootstrap_frontend', :git=> 'https://github.com/bigstores/spree_bootstrap_frontend-master.git', :branch => 'master'
 gem 'rabl'
 gem 'rack-cors', :require => 'rack/cors'
